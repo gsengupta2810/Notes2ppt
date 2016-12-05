@@ -79,16 +79,16 @@ def hist_equalise(img):
 # *********************************************************
 
 if __name__=='__main__':
-  img = cv2.imread('/home/gunjan/projects/Notes2ppt/testing/images_for_test/one.jpg',0)
-  cv2.imwrite("./testing/output_images/loaded_image.jpg",img)
+  img = cv2.imread('../testing/images_for_test/one.jpg',0)
+  cv2.imwrite("../testing/output_images/loaded_image.jpg",img)
   img=resize(img)
-  cv2.imwrite("./testing/output_images/resized_image.jpg",img)
+  cv2.imwrite("../testing/output_images/resized_image.jpg",img)
   th= smooth_image(img) 
   th= hist_equalise(th)
-  cv2.imwrite("./testing/output_images/equalized.jpg",th)
+  cv2.imwrite("../testing/output_images/equalized.jpg",th)
   th= adaptive_thresholding(th)
   th= otsu_binarisation(th)
   th= smooth_image(th) 
-  cv2.imwrite("./testing/output_images/smoothed_adaptive_Gaussian_threshold_otsu_binarization.jpg",th)
+  cv2.imwrite("../testing/output_images/smoothed_adaptive_Gaussian_threshold_otsu_binarization.jpg",th)
 
   

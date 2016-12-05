@@ -22,6 +22,14 @@ The text extracted from ocr has to be checked for spelling errors, word accuracy
 Text normalization has to be done, stop words have to be removed if required.
 Search results need to be ranked 
 
-
 #GUI 
 PyQt is a possible option for creating the gui 
+
+#OCR 
+A typical OCR system consists of the following steps:
+• image preprocessing, e.g. noise attenuation, correction of image orientation;
+• image binarization, usually performed adaptively [2];
+• segmentation [3], usually hierarchical (recognizing page layout, detecting text areas (and tables, figures etc.), then text paragraphs, individual lines, then segmenting lines into words, and finally words into characters);
+• actual recognition (supervised or unsupervised) [4, 5];
+• spellchecker-guided postprocessing;
+• saving output in some popular format (html, PDF, LaTeX)

@@ -1,10 +1,19 @@
 import wikipedia
-# Search for an article 
-search=wikipedia.search("Martensite")
-print search
-# finding the title of the page with the search 
-title=wikipedia.suggest('Iron')
-print title  # seems to be working very poorly, try to avoid using this 
-# finding the summery of the page 
-summary=wikipedia.summary(search[0], sentences=1) #can remove the sentence attribute to get the whole summery 
-print summary
+import codecs #for encoding file in UTF-8
+
+
+try :
+    page = wikipedia.page('Martensite')
+    #find the page on the wikipedia
+    summary = wikipedia.summary('Martensite',sentences = 2)
+    #finding summary of the page
+    header = page.title
+    #from page using title to get header
+    
+    with codecs.open('output.txt','w','utf-8') as text_file:
+        text_file.write("%s \n%s \n" % (header, summary))
+        #output the result in output.txt
+    
+except wikipedia.exceptions.DisambiguationError as e :
+    print e.options
+    #printing other information regarding search if search is not specific   

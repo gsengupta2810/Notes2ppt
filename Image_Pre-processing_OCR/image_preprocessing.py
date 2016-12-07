@@ -18,7 +18,6 @@ def resize(img):
   print str(x)+" "+str(y)
   x=float(1200/float(x))
   y=float(1200/float(y))
-  print x,; print y
   res = cv2.resize(img,None,fx=float(x), fy=float(y), interpolation = cv2.INTER_LINEAR)
   return res
 # ******************** Orientation Correction *****************

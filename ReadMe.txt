@@ -7,13 +7,14 @@ python-pptx
 stop-words
 nltk
 PyQt4
+PyEnchant
 
 # Important Links 
 Link to python-pptx documentation- https://python-pptx.readthedocs.io/en/latest/
 Link to pytesseract documentation- https://pypi.python.org/pypi/pytesseract
 Link to wikipedia pyton api documentation- https://pypi.python.org/pypi/wikipedia/
 Link to PyQt - http://zetcode.com/gui/pyqt4/firstprograms/
-
+Link to PyEnchant - http://pythonhosted.org/pyenchant/tutorial.html
 # Rough outline of steps  
 Preprocess images for ocr. 
 Extract meaningful data using ocr.

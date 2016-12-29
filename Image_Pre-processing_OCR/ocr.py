@@ -47,8 +47,8 @@ cv2.imshow("Scanned", imutils.resize(warped, height = 650))
 cv2.imwrite('../testing/output_images/warped.png',warped)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
+target= open("separate_text.py", 'w')
 from PIL import Image
-print( pytesseract.image_to_string(Image.open('../testing/output_images/warped.png')))
+target.write( pytesseract.image_to_string(Image.open('../testing/output_images/warped.png')))
 os.remove("../testing/output_images/warped.png")
 cv2.waitKey(0)

@@ -1,9 +1,14 @@
+#!/usr/bin/env python
 import pytesseract
 from package.transform import four_point_transform
 import imutils
 import numpy as np
 import cv2
 import os
+import subprocess
+
+import spellcheck
+
 
 image = cv2.imread('../testing/output_images/IMG_20161226_014645_HDR.jpg')
 ratio = image.shape[0] / 500.0
@@ -50,5 +55,7 @@ cv2.destroyAllWindows()
 target= open("separate_text.py", 'w')
 from PIL import Image
 target.write( pytesseract.image_to_string(Image.open('../testing/output_images/warped.png')))
+os.system('/home/apoorva/Notes2ppt/Image_Pre-processing_OCR/spellcheck.py')
+#subprocess.call("/home/apoorva/Notes2ppt/Image_Pre-processing_OCR/spellcheck.py", shell=True)
 os.remove("../testing/output_images/warped.png")
 cv2.waitKey(0)
